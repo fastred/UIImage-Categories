@@ -116,7 +116,7 @@
            drawTransposed:(BOOL)transpose
      interpolationQuality:(CGInterpolationQuality)quality {
     CGFloat scale = MAX(1.0f, self.scale);
-    CGRect newRect = CGRectIntegral(CGRectMake(0, 0, newSize.width*scale, newSize.height*scale));
+    CGRect newRect = CGRectIntegral(CGRectMake(0, 0, MIN(10000, newSize.width*scale), MIN(10000, newSize.height*scale)));
     CGRect transposedRect = CGRectMake(0, 0, newRect.size.height, newRect.size.width);
     CGImageRef imageRef = self.CGImage;
     
